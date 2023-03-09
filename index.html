@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+
+    canvas {
+        box-shadow: 0 0 8px 0 #000;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <canvas id="canvas" width="700" height="700">当前浏览器不支持canvas，请更换或升级浏览器！</canvas>
+    <script>
+        const canvas = document.querySelector('canvas')
+        const ctx = canvas.getContext('2d')
+
+        ctx.font = "50px serif"; // 设置文案大小和字体
+        ctx.shadowColor = "#cccccc"; //  设置阴影颜色
+        ctx.fillStyle = "#ee7934"; //  设置填充颜色
+        ctx.shadowOffsetX = 10; // X轴上的阴影
+        ctx.shadowOffsetY = 10; // Y轴上的阴影
+        ctx.shadowBlur = 5; // 阴影的模糊程度
+        ctx.fillText("Hi Canvas !", 100, 50);
+        ctx.fillRect(100, 100, 200, 100);
+        ctx.shadowOffsetX = -10;
+        ctx.shadowOffsetY = -10;
+        ctx.shadowBlur = 5;
+        ctx.fillText("Hi Canvas !", 100, 300);
+        ctx.fillRect(100, 350, 200, 100);
+    </script>
+</body>
+
+</html>
